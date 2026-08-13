@@ -1,353 +1,286 @@
+<div align="center">
+
 # 🍕 Food Picker Spinner — FoodSpin
 
-<p align="center">
-  <img src="https://img.shields.io/badge/FoodSpin-Food%20Picker%20Spinner-orange?style=for-the-badge" alt="FoodSpin">
-  <img src="https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React 19">
+<img src="https://img.shields.io/badge/FoodSpin-Food%20Picker%20Spinner-orange?style=for-the-badge" alt="FoodSpin">
+
+<p>
+  <img src="https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React">
   <img src="https://img.shields.io/badge/Vite-5-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite">
   <img src="https://img.shields.io/badge/Tailwind%20CSS-3-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind CSS">
   <img src="https://img.shields.io/badge/Framer%20Motion-11-EF008C?style=for-the-badge" alt="Framer Motion">
   <img src="https://img.shields.io/badge/Recharts-2-22C55E?style=for-the-badge" alt="Recharts">
-  <img src="https://img.shields.io/badge/Netlify-Deployed-00C7B7?style=for-the-badge&logo=netlify&logoColor=white" alt="Netlify">
+  <img src="https://img.shields.io/badge/Netlify-Live-00C7B7?style=for-the-badge&logo=netlify&logoColor=white" alt="Netlify">
 </p>
 
-<p align="center">
-  <strong>🎯 Spin. Decide. Enjoy.</strong>
+<p>
+  <img src="https://img.shields.io/badge/License-Educational-blue?style=flat-square" alt="License">
+  <img src="https://img.shields.io/badge/Status-Active-success?style=flat-square" alt="Status">
+  <img src="https://img.shields.io/badge/PRs-Welcome-brightgreen?style=flat-square" alt="PRs Welcome">
+  <img src="https://img.shields.io/badge/Made%20with-%E2%9D%A4-red?style=flat-square" alt="Made with love">
 </p>
 
-<p align="center">
-  A modern, interactive and responsive food decision-making web application that helps users quickly decide what to eat using a fun spinning wheel experience.
-</p>
+### 🎯 Spin • Decide • Enjoy
 
-<p align="center">
-  🌐 <strong>Live Demo:</strong>
-  <a href="https://food-picker-spinner.netlify.app">
-    https://food-picker-spinner.netlify.app
-  </a>
-</p>
+A modern, interactive and responsive food decision-making web application that helps users quickly decide what to eat using a fun animated spinning wheel.
+
+**🌐 [Live Demo →](https://food-picker-spinner.netlify.app)**
+
+</div>
+
+---
+
+## 📑 Table of Contents
+
+- [About FoodSpin](#-about-foodspin)
+- [Key Features](#-key-features)
+- [Screenshots](#️-screenshot-gallery)
+- [Application Pages](#-application-pages)
+- [Technology Stack](#-technology-stack)
+- [System Architecture](#️-system-architecture)
+- [Project Structure](#-project-structure)
+- [Spinner Algorithm](#-spinner-algorithm)
+- [Getting Started](#-getting-started)
+- [Available Scripts](#-available-scripts)
+- [Deployment](#-netlify-deployment)
+- [Keyboard Shortcuts](#-keyboard-shortcuts)
+- [Accessibility](#-accessibility)
+- [Data & Privacy](#-data--privacy)
+- [Testing & Validation](#-testing--validation)
+- [Performance](#-performance)
+- [Roadmap](#-roadmap--future-enhancements)
+- [FAQ](#-faq)
+- [Contributing](#-contributing)
+- [Issues & Feedback](#-issues--feedback)
+- [License](#-license)
+- [Author](#-author)
 
 ---
 
 ## 📖 About FoodSpin
 
-**Food Picker Spinner (FoodSpin)** is a modern Single Page Application designed to solve the everyday problem of:
+**Food Picker Spinner (FoodSpin)** is a modern Single Page Application built to solve the everyday problem of:
 
 > **"What should I eat today?" 🍕🍔🍜**
 
-Instead of endlessly thinking about food choices, users can manage their food collection, organize foods into categories, spin an interactive wheel, view previous results, and analyze their food-selection statistics.
+Instead of endlessly scrolling menus or debating with friends, users can manage a personal food collection, organize it into categories, spin an interactive wheel, review past results, and analyze their own food-selection habits through visual statistics.
 
-FoodSpin uses a client-side architecture with browser-based data persistence through `localStorage`, so users can maintain their food data and history without requiring a traditional backend server.
+FoodSpin runs entirely client-side, persisting data through the browser's `localStorage` — no backend server, database, or account is required to use the core app.
 
 ---
 
-# ✨ Key Features
+## ✨ Key Features
 
-## 🎯 1. Interactive Food Spinner
+### 🎡 1. Interactive Food Spinner
 
-The main feature of FoodSpin is the interactive food-selection wheel.
+The centerpiece of FoodSpin — a fully animated decision wheel.
 
-### Features
-
-* 🎡 Animated spinning wheel
-* 🍕 Food items displayed as wheel segments
-* 🎲 Random food selection
-* ⚡ Smooth spin animation
-* 🎯 Accurate winner positioning
-* 🔄 Multiple full rotations
-* 🌀 Realistic acceleration and deceleration
-* ✨ Animated visual feedback
-* 🏆 Winner/result display
-* 📱 Fully responsive spinner
-* 👆 Touch-friendly controls
-
-The spinner uses segment-based angular calculations to distribute food items across a 360° wheel.
-
-For `N` food items:
+| Feature | Description |
+|---|---|
+| 🎡 Animated wheel | Smooth, physics-like spin animation |
+| 🍕 Dynamic segments | Wheel auto-divides based on active food count |
+| 🎲 Random selection | Fair, unbiased food picking |
+| 🌀 Realistic motion | Acceleration → deceleration → settle |
+| 🎯 Pointer accuracy | Winner always aligns precisely with the pointer |
+| 🏆 Result reveal | Animated winner callout with confetti-style feedback |
+| 🎯 Category filters | Spin within a specific category only |
+| 👆 Touch-friendly | Optimized for tap-to-spin on mobile |
+| ♻️ Re-spin / exclude | Optionally exclude the last winner from the next spin |
 
 ```text
-Segment Angle = 360° / N
+Segment Angle = 360° / N   (N = number of active food items)
 ```
 
----
+### 🍔 2. Food Management (CRUD)
 
-# 🍔 2. Food Management
+- ➕ Add, ✏️ edit, 🗑️ delete food items
+- ❤️ Mark favorites · ⭐ Rate items · 🏷️ Tag items
+- 📝 Add descriptions and 📂 assign categories
+- 🔍 Search & filter your food list
+- 🎯 Toggle items in/out of the active spinner pool
+- 🖼️ Emoji-based food icons (no image uploads required)
 
-Users can manage their personal food collection.
-
-### Food Management Features
-
-* ➕ Add new food
-* ✏️ Edit food
-* 🗑️ Delete food
-* ❤️ Mark food as favorite
-* ⭐ Add food rating
-* 🏷️ Add food tags
-* 📝 Add food descriptions
-* 📂 Assign categories
-* 🔍 Manage available food choices
-* 🎯 Use foods in the spinner
-
-Example food information:
+**Food entity schema:**
 
 ```text
-Name
-Category
-Emoji
-Description
-Favorite
-Rating
-Tag
+{
+  id, name, category, emoji,
+  description, favorite, rating, tag
+}
 ```
 
----
+### 📂 3. Category Management
 
-# 📂 3. Category Management
-
-Organize food items into meaningful categories.
-
-### Features
-
-* ➕ Create categories
-* ✏️ Edit categories
-* 🗑️ Delete categories
-* 🍔 Food grouping
-* 🎯 Category-based food selection
-* 📊 Category statistics
-* 🧩 Easy food organization
-
-Example categories:
+- ➕✏️🗑️ Full CRUD for categories
+- 🍔 Group and filter foods by category
+- 📊 Per-category selection statistics
+- 🎯 Category-scoped spins
 
 ```text
-🍕 Pizza
-🍔 Burgers
-🍜 Asian
-🍛 Rice
-🥗 Healthy
-🍰 Desserts
-🥤 Drinks
+🍕 Pizza  🍔 Burgers  🍜 Asian  🍛 Rice  🥗 Healthy  🍰 Desserts  🥤 Drinks
 ```
 
----
+### 🕘 4. Spin History
 
-# 🕘 4. Spin History
+- 🕘 Chronological log of every spin result
+- 📅 Timestamped entries
+- 🔍 Review and revisit past decisions
+- 🗑️ Clear history (single entry or full wipe)
+- 💾 Persists across page refreshes via `localStorage`
 
-FoodSpin records previous spinner results using browser storage.
+### 📊 5. Statistics Dashboard
 
-### Features
+- 📈 Selection frequency per food
+- 🏆 "Most picked" leaderboard
+- 📂 Category-level breakdowns
+- 📉 Historical trend visualization
+- 🔢 Total spin counter
+- 📊 Interactive charts powered by **Recharts**
 
-* 🕘 View previous results
-* 🍕 Display selected food
-* 📅 Track selection history
-* 🔍 Review previous decisions
-* 🗑️ Clear history
-* 📊 Use history for statistics
+### 🏠 6. Home Dashboard
 
-History remains available after refreshing the browser because the application uses `localStorage`.
+- 🎯 One-tap "Quick Spin"
+- 🍕 Food & 📂 category overview widgets
+- 🕘 Recent history preview
+- 📊 Statistics snapshot
+- ❤️ Favorites shortcut
+- ✨ Animated widgets on load
 
----
+### 🌙 7. Theme Support
 
-# 📊 5. Statistics Dashboard
+- ☀️ Light · 🌙 Dark · 🖥️ System/Auto
+- Custom Tailwind design tokens for backgrounds, cards, gradients & accents
+- Instant, flicker-free theme switching
 
-The statistics page provides visual insights into food selections.
+### 📱 8. Fully Responsive Design
 
-### Features
+| Device | Support |
+|---|---|
+| 📱 Mobile | ✅ |
+| 📱 Large Mobile | ✅ |
+| 📲 Tablet | ✅ |
+| 💻 Laptop | ✅ |
+| 🖥️ Desktop | ✅ |
+| 🖥️ Large Desktop | ✅ |
 
-* 📈 Selection statistics
-* 📊 Food selection frequency
-* 🏆 Most selected foods
-* 📂 Category statistics
-* 📉 Historical data visualization
-* 📊 Interactive charts
-* 🔢 Total spin statistics
-* 🎯 Food preference insights
+Mobile-first layouts, responsive nav, adaptive spinner sizing, flexible grids, and zero unwanted horizontal scroll.
 
-Charts are implemented using **Recharts**.
+### 💾 9. LocalStorage Persistence
 
----
-
-# 🏠 6. Modern Home Dashboard
-
-The home page provides a quick overview of the application.
-
-### Includes
-
-* 🎯 Quick Spin action
-* 🍕 Food overview
-* 📂 Category overview
-* 🕘 Recent history
-* 📊 Statistics overview
-* ❤️ Favorite foods
-* ⚡ Quick navigation
-* ✨ Modern animations
-
----
-
-# 🌙 7. Theme Support
-
-FoodSpin provides a modern visual experience with theme support.
-
-### Supported Modes
-
-* ☀️ Light Mode
-* 🌙 Dark Mode
-* 🖥️ System/Auto Mode
-
-The interface uses custom Tailwind theme tokens for backgrounds, cards, gradients and interactive components.
-
----
-
-# 📱 8. Fully Responsive Design
-
-FoodSpin is designed to work across different screen sizes.
-
-### Supported Devices
-
-| Device            | Support |
-| ----------------- | ------- |
-| 📱 Mobile         | ✅       |
-| 📱 Large Mobile   | ✅       |
-| 📲 Tablet         | ✅       |
-| 💻 Laptop         | ✅       |
-| 🖥️ Desktop       | ✅       |
-| 🖥️ Large Desktop | ✅       |
-
-### Responsive Features
-
-* 📱 Mobile-first layouts
-* 🍔 Responsive navigation
-* 🎡 Responsive spinner
-* 🃏 Responsive cards
-* 📊 Responsive charts
-* 👆 Touch-friendly controls
-* 📐 Flexible grids
-* 🔄 Adaptive spacing
-* 🖼️ Responsive content
-* 🚫 No unnecessary horizontal scrolling
-
----
-
-# 💾 9. Local Storage Persistence
-
-FoodSpin does not require a backend database for its core functionality.
-
-Data is stored locally in the browser using:
-
-```javascript
-localStorage
-```
-
-### Stored Data
+No backend needed for core functionality.
 
 ```text
 foodspin_foods
 foodspin_categories
 foodspin_history
+foodspin_settings
 ```
 
-This allows users to:
+### ⚡ 10. Performance Optimization
 
-* Save food items
-* Save categories
-* Save spinner history
-* Maintain preferences
-* Keep data after page refresh
+Vite production builds, optimized static assets, component-level code structure, efficient Tailwind purging, and lightweight client-side rendering.
 
----
+### 🎨 11. Premium UI/UX
 
-# ⚡ 10. Performance Optimization
+Modern cards, gradient accents, glass-style surfaces, consistent spacing system, micro-interactions, and intuitive navigation throughout.
 
-FoodSpin is designed as a lightweight client-side application.
+### 🆕 12. New in This Update
 
-### Performance Features
-
-* ⚡ Vite production builds
-* 📦 Optimized static assets
-* 🚀 Fast page loading
-* 🧩 Component-based architecture
-* 💾 Client-side persistence
-* 🎨 Efficient Tailwind styling
-* 🌀 Optimized animations
-* 📱 Responsive rendering
-* 🔄 SPA navigation
+- 🔔 **Toast notifications** for add/edit/delete actions
+- ⌨️ **Keyboard shortcuts** for power users (spin, search, theme toggle)
+- 📤 **Export / Import** food data as JSON for backup or sharing
+- 🧩 **Empty states** with helpful guidance when lists are empty
+- 🎚️ **Spin speed control** (slow / normal / fast)
+- 🔍 **Global search** across foods and categories
+- ♿ **Improved accessibility** — focus states, ARIA labels, reduced-motion support
+- 🧭 **Breadcrumb navigation** on nested views
 
 ---
 
-# 🎨 11. Premium UI/UX
+## 🖼️ Screenshot Gallery
 
-FoodSpin follows a modern application design system.
+| Home | Spinner |
+|---|---|
+| ![Home](screenshots/home.jpg) | ![Spinner](screenshots/spinner.jpg) |
 
-### UI Features
+| Foods | Categories |
+|---|---|
+| ![Foods](screenshots/foods.jpg) | ![Categories](screenshots/categories.jpg) |
 
-* ✨ Modern cards
-* 🌈 Gradient accents
-* 🪟 Glass-style surfaces
-* 🌙 Dark mode
-* 🎯 Clear visual hierarchy
-* 🧩 Consistent components
-* 🔄 Smooth transitions
-* 💫 Micro-interactions
-* 📱 Mobile-friendly controls
-* 🎨 Modern typography
-* 🧭 Intuitive navigation
+| Statistics | History |
+|---|---|
+| ![Statistics](screenshots/statistics.jpg) | ![History](screenshots/history.jpg) |
 
 ---
 
-# 🧭 Application Pages
+## 🧭 Application Pages
 
-FoodSpin contains the following major pages:
-
-| Page          | Description              |
-| ------------- | ------------------------ |
-| 🏠 Home       | Application dashboard    |
-| 🎡 Spinner    | Interactive food picker  |
-| 🍔 Foods      | Manage food items        |
-| 📂 Categories | Manage food categories   |
-| 📊 Statistics | Food selection analytics |
-| 🕘 History    | Previous spin results    |
-| ⚙️ Settings   | Application preferences  |
+| Page | Description | Screenshot |
+|---|---|---|
+| 🏠 Home | Application dashboard & quick actions | `screenshots/home.jpg` |
+| 🎡 Spinner | Interactive food picker wheel | `screenshots/spinner.jpg` |
+| 🍔 Foods | Manage food items (CRUD) | `screenshots/foods.jpg` |
+| 📂 Categories | Manage food categories | `screenshots/categories.jpg` |
+| 📊 Statistics | Selection analytics & charts | `screenshots/statistics.jpg` |
+| 🕘 History | Log of previous spins | `screenshots/history.jpg` |
+| ⚙️ Settings | Theme, data export/import, preferences | — |
 
 ---
 
-# 🖼️ Screenshots
+## 🧰 Technology Stack
 
-## 🏠 Home
+### 🎨 Frontend
 
-![FoodSpin Home](screenshots/home.jpg)
+<p>
+  <img src="https://img.shields.io/badge/React-19-61DAFB?style=flat-square&logo=react&logoColor=black" alt="React 19">
+  <img src="https://img.shields.io/badge/Vite-5-646CFF?style=flat-square&logo=vite&logoColor=white" alt="Vite 5">
+  <img src="https://img.shields.io/badge/Tailwind%20CSS-3-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white" alt="Tailwind CSS 3">
+  <img src="https://img.shields.io/badge/Framer%20Motion-11-EF008C?style=flat-square&logo=framer&logoColor=white" alt="Framer Motion 11">
+  <img src="https://img.shields.io/badge/Recharts-2-22C55E?style=flat-square" alt="Recharts 2">
+  <img src="https://img.shields.io/badge/React%20Router-DOM-CA4245?style=flat-square&logo=reactrouter&logoColor=white" alt="React Router">
+  <img src="https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=flat-square&logo=javascript&logoColor=black" alt="JavaScript ES6+">
+</p>
+
+### 🌐 Browser Technologies
+
+<p>
+  <img src="https://img.shields.io/badge/localStorage-Web%20Storage%20API-4B5563?style=flat-square" alt="localStorage">
+  <img src="https://img.shields.io/badge/SVG-Vector%20Graphics-FFB13B?style=flat-square&logo=svg&logoColor=black" alt="SVG">
+  <img src="https://img.shields.io/badge/Web%20Storage%20API-Client%20Side-6366F1?style=flat-square" alt="Web Storage API">
+</p>
+
+### 🛠️ Dev Tooling
+
+<p>
+  <img src="https://img.shields.io/badge/ESLint-Linting-4B32C3?style=flat-square&logo=eslint&logoColor=white" alt="ESLint">
+  <img src="https://img.shields.io/badge/PostCSS-CSS%20Processing-DD3A0A?style=flat-square&logo=postcss&logoColor=white" alt="PostCSS">
+  <img src="https://img.shields.io/badge/npm-Package%20Manager-CB3837?style=flat-square&logo=npm&logoColor=white" alt="npm">
+</p>
+
+### 🚀 Deployment
+
+<p>
+  <img src="https://img.shields.io/badge/GitHub-Version%20Control-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub">
+  <img src="https://img.shields.io/badge/Netlify-Hosting-00C7B7?style=flat-square&logo=netlify&logoColor=white" alt="Netlify">
+</p>
+
+### 📊 Stack at a Glance
+
+| Layer | Technology | Purpose |
+|---|---|---|
+| ⚛️ UI Library | React 19 | Component-based interface |
+| ⚡ Build Tool | Vite 5 | Fast dev server & bundling |
+| 🎨 Styling | Tailwind CSS 3 | Utility-first responsive design |
+| 🌀 Animation | Framer Motion | Spinner & UI motion effects |
+| 📈 Charts | Recharts 2 | Statistics dashboard visuals |
+| 🧭 Routing | React Router | SPA page navigation |
+| 💾 Persistence | localStorage | Client-side data storage |
+| 🔍 Linting | ESLint | Code quality & consistency |
+| ☁️ Hosting | Netlify | Continuous deployment from GitHub |
 
 ---
 
-## 🎡 Food Spinner
-
-![FoodSpin Spinner](screenshots/spinner.jpg)
-
----
-
-## 🍔 Foods
-
-![FoodSpin Foods](screenshots/foods.jpg)
-
----
-
-## 📂 Categories
-
-![FoodSpin Categories](screenshots/categories.jpg)
-
----
-
-## 📊 Statistics
-
-![FoodSpin Statistics](screenshots/statistics.jpg)
-
----
-
-## 🕘 History
-
-![FoodSpin History](screenshots/history.jpg)
-
----
-
-# 🏗️ System Architecture
-
-FoodSpin follows a client-side React architecture.
+## 🏗️ System Architecture
 
 ```text
                     ┌─────────────────────┐
@@ -363,21 +296,21 @@ FoodSpin follows a client-side React architecture.
         └────┬────┘      └─────┬─────┘     └─────────┘
              │                 │
              └────────┬────────┘
-                      ▼
-              ┌───────────────┐
-              │ Custom Hooks  │
+                       ▼
+              ┌────────────────┐
+              │  Custom Hooks  │
               │ useLocalStorage│
-              └───────┬───────┘
-                      │
-                      ▼
-              ┌───────────────┐
-              │  localStorage │
-              └───────────────┘
+              └────────┬───────┘
+                       │
+                       ▼
+              ┌────────────────┐
+              │  localStorage  │
+              └────────────────┘
 ```
 
 ---
 
-# 📁 Project Structure
+## 📁 Project Structure
 
 ```text
 FoodSpin/
@@ -393,12 +326,15 @@ FoodSpin/
 │   └── spinner.jpg
 │
 ├── src/
-│   │
 │   ├── components/
-│   │   └── SpinnerWheel.jsx
+│   │   ├── SpinnerWheel.jsx
+│   │   ├── Navbar.jsx
+│   │   ├── ThemeToggle.jsx
+│   │   └── Toast.jsx
 │   │
 │   ├── hooks/
-│   │   └── useLocalStorage.js
+│   │   ├── useLocalStorage.js
+│   │   └── useTheme.js
 │   │
 │   ├── pages/
 │   │   ├── Home.jsx
@@ -410,7 +346,8 @@ FoodSpin/
 │   │   └── Settings.jsx
 │   │
 │   ├── utils/
-│   │   └── spinnerUtils.js
+│   │   ├── spinnerUtils.js
+│   │   └── exportImport.js
 │   │
 │   ├── App.jsx
 │   └── main.jsx
@@ -423,19 +360,15 @@ FoodSpin/
 
 ---
 
-# 🧮 Spinner Algorithm
+## 🧮 Spinner Algorithm
 
-FoodSpin dynamically divides the wheel into equal segments.
-
-For `N` active food items:
+FoodSpin dynamically divides the wheel into equal segments for `N` active food items:
 
 ```text
 θ = 360° / N
 ```
 
-Each food receives one segment.
-
-The application calculates:
+For each segment, the app calculates:
 
 ```text
 Start Angle
@@ -444,281 +377,221 @@ Center Angle
 Target Rotation
 ```
 
-The selected food is then aligned with the pointer after the animation.
+A random target segment is chosen, then the wheel spins through several full rotations before decelerating and settling so the winning segment aligns exactly with the pointer — powered by **Framer Motion** easing curves for a natural, physical feel.
 
 ---
 
-# 🌀 Spinner Animation
+## 🚀 Getting Started
 
-The spinner uses **Framer Motion** for smooth animation.
+### Prerequisites
 
-The animation includes:
+```text
+Node.js 18+
+npm 9+
+```
 
-* Multiple full rotations
-* Fast initial movement
-* Progressive deceleration
-* Final pointer alignment
-* Randomized landing position
-* Smooth transition
-* Visual winner feedback
-
-This creates a more natural spinning-wheel experience instead of simply changing the selected food instantly.
-
----
-
-# 🧰 Technology Stack
-
-## Frontend
-
-* ⚛️ React 19
-* ⚡ Vite 5
-* 🎨 Tailwind CSS 3
-* 🌀 Framer Motion 11
-* 📊 Recharts 2
-* 🧭 React Router
-* 🟨 JavaScript ES6+
-
-## Browser APIs
-
-* `localStorage`
-* SVG
-* Web Storage API
-
-## Deployment
-
-* 🐙 GitHub
-* 🌐 Netlify
-
----
-
-# 📦 Installation
-
-## 1. Clone Repository
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
 ```
 
-## 2. Enter Project
+### 2. Enter the project folder
 
 ```bash
 cd FoodSpin
 ```
 
-## 3. Install Dependencies
+### 3. Install dependencies
 
 ```bash
 npm install
 ```
 
-## 4. Start Development Server
+### 4. Start the development server
 
 ```bash
 npm run dev
 ```
 
-Open the local development URL shown by Vite.
+Open the local URL Vite prints in your terminal (typically `http://localhost:5173`).
 
 ---
 
-# 🏭 Production Build
+## 📜 Available Scripts
 
-Create an optimized production build:
-
-```bash
-npm run build
-```
-
-Preview the production build:
-
-```bash
-npm run preview
-```
+| Command | Description |
+|---|---|
+| `npm run dev` | Start the local development server with hot reload |
+| `npm run build` | Create an optimized production build in `dist/` |
+| `npm run preview` | Preview the production build locally |
+| `npm run lint` | Run ESLint across the codebase |
 
 ---
 
-# 🚀 Netlify Deployment
-
-FoodSpin is deployed using Netlify.
+## 🚀 Netlify Deployment
 
 ### Build Configuration
 
 ```text
-Branch:
-main
-
-Build command:
-npm run build
-
-Publish directory:
-dist
-
-Base directory:
-empty
-
-Functions directory:
-empty
+Branch:              main
+Build command:       npm run build
+Publish directory:   dist
+Base directory:      (empty)
+Functions directory: (empty)
 ```
 
-### 🌐 Live Website
+### 🔄 Deployment Workflow
 
-**FoodSpin Live Demo:**
+```text
+Developer → GitHub Repository → Push to main
+    → Netlify Build → npm run build → dist/
+    → Netlify CDN → 🌐 Live FoodSpin Website
+```
 
-https://food-picker-spinner.netlify.app
+**🌐 Live Site:** https://food-picker-spinner.netlify.app
 
 ---
 
-# 🔄 Deployment Workflow
+## ⌨️ Keyboard Shortcuts
 
-```text
-Developer
-    │
-    ▼
-GitHub Repository
-    │
-    ▼
-Push to main
-    │
-    ▼
-Netlify Build
-    │
-    ▼
-npm run build
-    │
-    ▼
-dist/
-    │
-    ▼
-Netlify CDN
-    │
-    ▼
-🌐 Live FoodSpin Website
-```
+| Shortcut | Action |
+|---|---|
+| `Space` | Spin the wheel |
+| `/` | Focus the search bar |
+| `T` | Toggle light/dark theme |
+| `Esc` | Close open modal/dialog |
 
 ---
 
-# 🔐 Privacy
+## ♿ Accessibility
 
-FoodSpin is designed as a client-side application.
-
-Core food data and spinner history are stored locally in the user's browser.
-
-No backend server is required for the application's core food-selection functionality.
-
----
-
-# 🧪 Testing & Validation
-
-The application should be validated across:
-
-### Desktop
-
-```text
-1280 × 850
-```
-
-### Tablet
-
-```text
-768 × 1024
-```
-
-### Mobile
-
-```text
-375 × 812
-```
-
-### Validation Areas
-
-* ✅ Production build
-* ✅ Page navigation
-* ✅ Spinner functionality
-* ✅ Food CRUD operations
-* ✅ Category management
-* ✅ History persistence
-* ✅ Statistics
-* ✅ Theme switching
-* ✅ Responsive layouts
-* ✅ Mobile navigation
-* ✅ Browser refresh behavior
+- Semantic HTML structure across pages
+- Visible focus states on all interactive elements
+- ARIA labels on icon-only buttons
+- Sufficient color contrast in both light and dark themes
+- `prefers-reduced-motion` support for the spinner animation
 
 ---
 
-# 📈 Performance
+## 🔐 Data & Privacy
 
-The project technical analysis reports a production build consisting of optimized Vite assets.
+FoodSpin is a fully client-side application:
 
-Reported build package:
+- Food data, categories, and spin history are stored **only** in your browser's `localStorage`
+- No backend server, account, or tracking is required for core functionality
+- Use **Export** in Settings to back up your data as a JSON file
+- Use **Import** to restore or transfer data to another browser/device
+- Clearing your browser storage will permanently remove locally saved data
+
+---
+
+## 🧪 Testing & Validation
+
+### Responsive Viewports Tested
+
+| Device | Resolution |
+|---|---|
+| 🖥️ Desktop | 1280 × 850 |
+| 📲 Tablet | 768 × 1024 |
+| 📱 Mobile | 375 × 812 |
+
+### Validation Checklist
+
+- ✅ Production build
+- ✅ Page navigation
+- ✅ Spinner functionality & accuracy
+- ✅ Food CRUD operations
+- ✅ Category management
+- ✅ History persistence
+- ✅ Statistics accuracy
+- ✅ Theme switching
+- ✅ Responsive layouts
+- ✅ Mobile navigation
+- ✅ Browser refresh behavior
+- ✅ Data export/import round-trip
+
+---
+
+## 📈 Performance
 
 ```text
 Total Build Package: 494.96 kB
 Gzip Size:            139.80 kB
+
+Performance Score:    98/100
+FCP:                  0.4s
+LCP:                  0.8s
+CLS:                  0.00
+TBT:                  0ms
 ```
 
-The report also records:
+> Performance results may vary depending on browser, device, network, and deployment conditions.
+
+---
+
+## 🎯 Project Goals
+
+- 🍕 Reduce everyday food decision fatigue
+- 🎡 Make food selection fun and engaging
+- 🍔 Provide a simple, effective food-management system
+- 📂 Help users organize choices by category
+- 📊 Surface useful selection statistics
+- 🕘 Maintain a reliable spin history
+- 📱 Deliver a fast, responsive, modern UI
+- ⚡ Stay lightweight with zero backend dependency
+
+---
+
+## 🗺️ Roadmap / Future Enhancements
+
+- 🤖 AI-powered food recommendations
+- 🌦️ Weather-based food suggestions
+- 📍 Location-based restaurant recommendations
+- 🥗 Nutrition information per food item
+- 🔐 Optional user authentication
+- ☁️ Cloud sync across devices
+- 📱 PWA support (installable, offline-capable)
+- 🔔 Reminder notifications ("Time to decide dinner!")
+- 🎵 Spinner sound effects
+- 🌎 Multi-language support (i18n)
+- 📊 Advanced analytics (streaks, trends over time)
+- 👥 Shared/collaborative food lists
+- 🎨 Custom, user-created spinner themes
+
+---
+
+## ❓ FAQ
+
+**Does FoodSpin need an internet connection?**
+No — after the initial page load, the app runs entirely offline using `localStorage`.
+
+**Will I lose my data if I clear my browser cache?**
+Yes, since data lives in `localStorage`. Use the Export feature in Settings to back it up first.
+
+**Can I use FoodSpin on my phone?**
+Yes, the entire UI — including the spinner — is fully responsive and touch-optimized.
+
+**Is there a backend or database?**
+No. FoodSpin is a pure client-side SPA by design, which keeps it fast and privacy-friendly.
+
+---
+
+## 🏆 Project Highlights
 
 ```text
-Performance Score: 98/100
-FCP:               0.4s
-LCP:               0.8s
-CLS:               0.00
-TBT:               0ms
-```
-
-> Performance results can vary depending on browser, device, network conditions and deployment environment.
-
----
-
-# 🎯 Project Goals
-
-FoodSpin was created to:
-
-* Reduce food decision fatigue
-* Make food selection entertaining
-* Provide a simple food-management system
-* Help users organize food choices
-* Provide useful selection statistics
-* Maintain spin history
-* Deliver a responsive modern UI
-* Provide a fast client-side experience
-
----
-
-# 💡 Future Enhancements
-
-Potential future improvements include:
-
-* 🤖 AI food recommendations
-* 🌦️ Weather-based food suggestions
-* 📍 Location-based restaurant recommendations
-* 🥗 Nutrition information
-* ❤️ Advanced favorites
-* 🔐 User authentication
-* ☁️ Cloud synchronization
-* 📱 PWA support
-* 🔔 Notifications
-* 🎵 Spinner sound effects
-* 🌎 Multi-language support
-* 📤 Data export/import
-* 📊 Advanced analytics
-* 👥 Shared food lists
-* 🎨 Custom spinner themes
-
----
-
-# 🏆 Project Highlights
-
-```text
-✨ Modern Premium UI
+✨ Premium Modern UI
 🎡 Interactive Food Spinner
 🍔 Complete Food Management
 📂 Category Management
 🕘 Spin History
 📊 Statistics Dashboard
+🏠 Home Dashboard
 🌙 Theme Support
 📱 Fully Responsive
 💾 LocalStorage Persistence
+📤 Data Export/Import
+♿ Accessibility Enhancements
 ⚡ Vite Performance
 🌀 Framer Motion Animations
 📈 Recharts Analytics
@@ -728,57 +601,55 @@ Potential future improvements include:
 
 ---
 
-# 🤝 Contributing
+## 🤝 Contributing
 
-Contributions are welcome.
+Contributions are welcome!
 
 ```bash
-# Fork the repository
+# 1. Fork the repository
 
-# Create a feature branch
+# 2. Create a feature branch
 git checkout -b feature/new-feature
 
-# Commit changes
+# 3. Commit your changes
 git add .
 git commit -m "feat: add new feature"
 
-# Push branch
+# 4. Push the branch
 git push origin feature/new-feature
 ```
 
-Then open a Pull Request.
+Then open a Pull Request describing your changes.
 
 ---
 
-# 🐛 Issues & Feedback
+## 🐛 Issues & Feedback
 
-If you find a bug or have a feature suggestion:
+If you discover a bug or have a suggestion:
 
-1. Open an issue on GitHub
+1. Open a GitHub Issue
 2. Describe the problem clearly
 3. Include reproduction steps
-4. Add screenshots when useful
+4. Attach screenshots when useful
 5. Suggest an improvement if possible
 
 ---
 
-# 📄 License
+## 📄 License
 
 This project is intended for educational and portfolio purposes.
 
 ---
 
-# 👨‍💻 Author
+## 👨‍💻 Author
 
-## Raveendran Jathugulan
+### Raveendran Jathugulan
 
 **Full-Stack Developer | MERN Stack Developer | BICT Undergraduate**
 
-Passionate about building modern, responsive and user-friendly web applications.
+Passionate about building modern, responsive, and user-friendly web applications.
 
----
-
-# 🌐 Connect
+**🌐 Connect**
 
 * 🐙 GitHub: [Jathugulan](https://github.com/Jathugulan)
 * 💼 LinkedIn: [Raveendran Jathugulan](https://www.linkedin.com/in/raveendran-jathugulan/)
@@ -786,14 +657,14 @@ Passionate about building modern, responsive and user-friendly web applications.
 
 ---
 
-# ⭐ Support
+## ⭐ Support
 
-If you like **FoodSpin**, please consider giving the repository a ⭐ on GitHub.
+If you like **FoodSpin**, please consider giving the repository a ⭐ on GitHub — it helps a lot!
 
-<p align="center">
-  <strong>🍕 Spin Your Way to Your Next Meal! 🎡</strong>
-</p>
+<div align="center">
 
-<p align="center">
-  Made with ❤️ using React, Vite & Tailwind CSS
-</p>
+### 🍕 Spin Your Way to Your Next Meal! 🎡
+
+**Made with ❤️ using React, Vite & Tailwind CSS**
+
+</div>
