@@ -199,17 +199,25 @@ Modern cards, gradient accents, glass-style surfaces, consistent spacing system,
 
 ## 🖼️ Screenshot Gallery
 
-| Home | Spinner |
+| Home (Desktop) | Home (Mobile) |
 |---|---|
-| ![Home](screenshots/home.jpg) | ![Spinner](screenshots/spinner.jpg) |
+| ![Home Desktop](home-desktop.png) | ![Home Mobile](home-mobile.png) |
+
+| Spinner (Desktop) | Spinner (Mobile) |
+|---|---|
+| ![Spinner Desktop](spinner-desktop.png) | ![Spinner Mobile](spinner-mobile.png) |
 
 | Foods | Categories |
 |---|---|
-| ![Foods](screenshots/foods.jpg) | ![Categories](screenshots/categories.jpg) |
+| ![Foods](foods-desktop.png) | ![Categories](categories-desktop.png) |
 
 | Statistics | History |
 |---|---|
-| ![Statistics](screenshots/statistics.jpg) | ![History](screenshots/history.jpg) |
+| ![Statistics](statistics-desktop.png) | ![History](history-desktop.png) |
+
+| Settings |
+|---|
+| ![Settings](settings-desktop.png) |
 
 ---
 
@@ -217,13 +225,13 @@ Modern cards, gradient accents, glass-style surfaces, consistent spacing system,
 
 | Page | Description | Screenshot |
 |---|---|---|
-| 🏠 Home | Application dashboard & quick actions | `screenshots/home.jpg` |
-| 🎡 Spinner | Interactive food picker wheel | `screenshots/spinner.jpg` |
-| 🍔 Foods | Manage food items (CRUD) | `screenshots/foods.jpg` |
-| 📂 Categories | Manage food categories | `screenshots/categories.jpg` |
-| 📊 Statistics | Selection analytics & charts | `screenshots/statistics.jpg` |
-| 🕘 History | Log of previous spins | `screenshots/history.jpg` |
-| ⚙️ Settings | Theme, data export/import, preferences | — |
+| 🏠 Home | Application dashboard & quick actions | `home-desktop.png` / `home-mobile.png` |
+| 🎡 Spinner | Interactive food picker wheel | `spinner-desktop.png` / `spinner-mobile.png` |
+| 🍔 Foods | Manage food items (CRUD) | `foods-desktop.png` |
+| 📂 Categories | Manage food categories | `categories-desktop.png` |
+| 📊 Statistics | Selection analytics & charts | `statistics-desktop.png` |
+| 🕘 History | Log of previous spins | `history-desktop.png` |
+| ⚙️ Settings | Theme, data export/import, preferences | `settings-desktop.png` |
 
 ---
 
@@ -317,13 +325,15 @@ FoodSpin/
 │
 ├── public/
 │
-├── screenshots/
-│   ├── home.jpg
-│   ├── categories.jpg
-│   ├── history.jpg
-│   ├── statistics.jpg
-│   ├── foods.jpg
-│   └── spinner.jpg
+├── home-desktop.png
+├── home-mobile.png
+├── spinner-desktop.png
+├── spinner-mobile.png
+├── foods-desktop.png
+├── categories-desktop.png
+├── statistics-desktop.png
+├── history-desktop.png
+├── settings-desktop.png
 │
 ├── src/
 │   ├── components/
